@@ -13,7 +13,7 @@ app.get('/items', (req, res) => {
 app.post('/items', (req, res) => {
 
     if(!req.body.name || !req.body.price){
-        res.status(404).json({message:"missing data on the body"})
+        return res.status(404).json({message:"missing data on the body"})
     }
   const id = req.body.name + req.body.price + (Math.floor(Math.random() * 10))
 
